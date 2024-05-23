@@ -12,9 +12,10 @@
             console.log("מתחיל");
 
             const path = "https://beneyisrael.com/Tikun-Qorim/cp/cp0309.htm";
+            const corsProxy = "https://cors-anywhere.herokuapp.com/";
 
             try {
-                const response = await fetch(path);
+                const response = await fetch(corsProxy + path);
                 const html = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
