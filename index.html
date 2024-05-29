@@ -5,14 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parasha Riddle</title>
 </head>
-<body>
+<body dir=rtl>
     <script>
+    
+    	function show() {
+    		var arr = spaces.value.split(',').map(Number);
+    		alert (arr.length);
+    		alert(pars.value);
+    	}
+    
         async function fetchAndProcess() {
-            const lengths = [3, 3, 3];
+            if (spaces.value == null || spaces.value.trim().length === 0) {
+            	alert("נא להכניס מרווחי מילים!");
+            	return;
+            }
+            	
+        
+            const lengths = spaces.value.split(',').map(Number);
             console.log("מתחיל");
 
             // const path = "https://beneyisrael.com/Tikun-Qorim/cp/cp0309.htm";
-            const path = "emor.txt"; 
+            const path = pars.value;
             // const corsProxy = "https://cors-anywhere.herokuapp.com/";
 
             try {
@@ -45,8 +58,71 @@
             }
         }
 
-        fetchAndProcess();
+        //fetchAndProcess();
     </script>
+<h2>מרווחי מילים</h2>    
+<input id="spaces" />
+<h2>פרשה</h2>
+<select name="pars" id="pars">
+<option value="cp0101.txt">בראשית</option>
+ <option value="cp0102.txt">נוח</option>
+ <option value="cp0103.txt">לך־לך</option>
+ <option value="cp0104.txt">ויירא</option>
+ <option value="cp0105.txt">חיי</option>
+ <option value="cp0106.txt">תולדות</option>
+ <option value="cp0107.txt">וייצא</option>
+ <option value="cp0108.txt">וישלח</option>
+ <option value="cp0109.txt">ויישב</option>
+ <option value="cp0110.txt">מקץ</option>
+ <option value="cp0111.txt">וייגש</option>
+ <option value="cp0112.txt">ויחי</option>
+ <option value="cp0201.txt">שמות</option>
+ <option value="cp0202.txt">ואירא</option>
+ <option value="cp0203.txt">בוא</option>
+ <option value="cp0204.txt">בשלח</option>
+ <option value="cp0205.txt">יתרו</option>
+ <option value="cp0206.txt">משפטים</option>
+ <option value="cp0207.txt">תרומה</option>
+ <option value="cp0208.txt">תצווה</option>
+ <option value="cp0209.txt">כי</option>
+ <option value="cp0210.txt">ויקהל</option>
+ <option value="cp0211.txt">פקודי</option>
+ <option value="cp0301.txt">ויקרא</option>
+ <option value="cp0302.txt">צו</option>
+ <option value="cp0303.txt">שמיני</option>
+ <option value="cp0304.txt">תזריע</option>
+ <option value="cp0305.txt">מצורע</option>
+ <option value="cp0306.txt">אחרי</option>
+ <option value="cp0307.txt">קדושים</option>
+ <option value="cp0308.txt">אמור</option>
+ <option value="cp0309.txt">בהר</option>
+ <option value="cp0310.txt">בחוקותיי</option>
+ <option value="cp0401.txt">במדבר</option>
+ <option value="cp0402.txt">נשוא</option>
+ <option value="cp0403.txt">בהעלותך</option>
+ <option value="cp0404.txt">שלח־לך</option>
+ <option value="cp0405.txt">קורח</option>
+ <option value="cp0406.txt">חוקת</option>
+ <option value="cp0407.txt">בלק</option>
+ <option value="cp0408.txt">פינחס</option>
+ <option value="cp0409.txt">מטות</option>
+ <option value="cp0410.txt">מסעי</option>
+ <option value="cp0501.txt">דברים</option>
+ <option value="cp0502.txt">ואתחנן</option>
+ <option value="cp0503.txt">עקב</option>
+ <option value="cp0504.txt">ראה</option>
+ <option value="cp0505.txt">שופטים</option>
+ <option value="cp0506.txt">כי־תצא</option>
+ <option value="cp0507.txt">כי־תבוא</option>
+ <option value="cp0508.txt">ניצבים</option>
+ <option value="cp0509.txt">וילך</option>
+ <option value="cp0510.txt">האזינו</option>
+ <option value="cp0511.txt">וזאת הברכה</option>]
+
+</select>
+</br>
+</br>
+<button onclick="fetchAndProcess()">מצא</button>
 </div id="mydiv">
     
 </body>
