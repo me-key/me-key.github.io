@@ -15,6 +15,7 @@
     	}
     
         async function fetchAndProcess() {
+            res.textContent = "";
 
             if (spaces.value == null || spaces.value.trim().length === 0) {
             	alert("נא להכניס מרווחי מילים!");
