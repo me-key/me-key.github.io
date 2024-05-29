@@ -8,13 +8,14 @@
 <body dir=rtl>
     <script>
     
-    	function show() {
+    	function show() {    	
     		var arr = spaces.value.split(',').map(Number);
     		alert (arr.length);
     		alert(pars.value);
     	}
     
         async function fetchAndProcess() {
+
             if (spaces.value == null || spaces.value.trim().length === 0) {
             	alert("נא להכניס מרווחי מילים!");
             	return;
@@ -23,6 +24,7 @@
         
             const lengths = spaces.value.split(',').map(Number);
             console.log("מתחיל");
+
 
             // const path = "https://beneyisrael.com/Tikun-Qorim/cp/cp0309.htm";
             const path = pars.value;
@@ -51,6 +53,7 @@
                     if (match) {
                         const matchedWords = words.slice(i, i + lengths.length).join(' ');
                         console.log(matchedWords);
+                        res.textContent += matchedWords;
                     }
                 }
             } catch (error) {
@@ -123,7 +126,7 @@
 </br>
 </br>
 <button onclick="fetchAndProcess()">מצא</button>
-</div id="mydiv">
+<p id="res" />
     
 </body>
 </html>
