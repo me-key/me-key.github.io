@@ -53,7 +53,7 @@
                     if (match) {
                         const matchedWords = words.slice(i, i + lengths.length).join(' ');
                         console.log(matchedWords);
-                        res.textContent += matchedWords;
+                        res.textContent += matchedWords + "\n";
                     }
                 }
             } catch (error) {
@@ -126,7 +126,7 @@
 </br>
 </br>
 <button onclick="fetchAndProcess()">מצא</button>
-<p id="res" />
+<pre id="res" />
     
 </body>
 </html>
